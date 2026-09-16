@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Month With You ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff6f8;
+    color: #4d3039;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatHeart 7s linear infinite;
+    opacity: 0;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #ffffff,
+            #ffeaf0 45%,
+            #f6d4df
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.eyebrow {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 11px;
+    opacity: .65;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 15vw, 140px);
+
+    line-height: .8;
+
+    color: #713f51;
+
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    display: block;
+    font-size: .55em;
+    font-style: italic;
+}
+
+.subtitle {
+    line-height: 1.8;
+    font-size: 15px;
+    max-width: 550px;
+    margin: auto;
+}
+
+.btn {
+    border: none;
+
+    background: #713f51;
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    margin-top: 28px;
+
+    cursor: pointer;
+
+    box-shadow: 0 12px 30px #713f5125;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+/* ---------- SECTIONS ---------- */
+
+section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 90px 22px;
+}
+
+.section-title {
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+
+    color: #713f51;
+
+    margin-bottom: 10px;
+}
+
+.section-sub {
+    text-align: center;
+
+    opacity: .65;
+
+    margin-bottom: 45px;
+}
+
+/* ---------- ANIMATION ---------- */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition: 1s;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* ---------- LETTER ---------- */
+
+.letter-wrapper {
+    max-width: 800px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.letter {
+    background:
+        linear-gradient(
+            rgba(255,255,255,.93),
+            rgba(255,248,250,.93)
+        );
+
+    border: 1px solid #ead1d9;
+
+    border-radius: 25px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 25px 70px rgba(100,50,70,.12);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.letter::before {
+    content: "♥";
+
+    position: absolute;
+
+    right: -20px;
+    top: -35px;
+
+    font-size: 150px;
+
+    color: #f7dce4;
+
+    transform: rotate(15deg);
+}
+
+.letter::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px dashed #ddb5c1;
+
+    border-radius: 18px;
+
+    pointer-events: none;
+}
+
+.letter-content {
+    position: relative;
+    z-index: 2;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    line-height: 1.65;
+}
+
+.signature {
+    text-align: right;
+
+    margin-top: 25px;
+
+    font-size: 29px;
+
+    color: #713f51;
+
+    font-style: italic;
+}
+
+/* ---------- PHOTOS ---------- */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.photo-card {
+    background: white;
+
+    padding: 9px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(90,40,60,.12);
+
+    transform: rotate(-2deg);
+
+    transition: .4s;
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.photo-card:hover {
+    transform:
+        translateY(-10px)
+        rotate(0deg)
+        scale(1.02);
+}
+
+.photo {
+    width: 100%;
+
+    aspect-ratio: 1 / 1.15;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #f3dce3;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.caption {
+    text-align: center;
+
+    padding: 13px 5px 8px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+
+    color: #713f51;
+}
+
+/* ---------- LOVE CARDS ---------- */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background: white;
+
+    border: 1px solid #efd9df;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(90,40,60,.08);
+
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-icon {
+    font-size: 40px;
+}
+
+.card h3 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+
+    margin: 12px 0;
+}
+
+.card p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: .7;
+}
+
+/* ---------- COUNTER ---------- */
+
+.counter {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6dce4,
+            #fff
+        );
+
+    border-radius: 30px;
+
+    padding: 50px 20px;
+
+    box-shadow:
+        0 20px 50px rgba(90,40,60,.08);
+}
+
+.counter-number {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 90px;
+
+    color: #713f51;
+
+    line-height: 1;
+}
+
+.counter-label {
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: .6;
+}
+
+/* ---------- QUESTION ---------- */
+
+.question {
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.question h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(48px, 9vw, 85px);
+
+    color: #713f51;
+}
+
+.question p {
+    max-width: 600px;
+
+    margin: 20px auto;
+
+    line-height: 1.8;
+}
+
+.answer {
+    display: none;
+
+    margin-top: 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 32px;
+
+    color: #713f51;
+
+    animation: appear .8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ---------- FINAL ---------- */
+
+.final {
+    min-height: 80vh;
+
+    display: grid;
+
+    place-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            #fff6f8,
+            #f5d5df
+        );
+}
+
+.final h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(60px, 11vw, 110px);
+
+    line-height: .85;
+
+    color: #713f51;
+}
+
+.final p {
+    max-width: 550px;
+
+    margin: 25px auto;
+
+    line-height: 1.8;
+}
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 12px;
+
+    opacity: .5;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:700px) {
+
+    .gallery,
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .letter-content {
+        font-size: 21px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .counter-number {
+        font-size: 70px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+Our little milestone ❤️
+</div>
+
+<h1>
+One
+<span>Month</span>
+</h1>
+
+<p class="subtitle">
+
+One beautiful month with my favourite person.
+
+<br>
+
+For my <b>mudhu🥰</b> — this little website is just for you.
+
+</p>
+
+<button
+class="btn"
+onclick="scrollToLetter()">
+
+Open your surprise 💌
+
+</button>
+
+</div>
+
+</header>
+
+
+
+<!-- ================= LETTER ================= -->
+
+<section
+id="letter"
+class="reveal">
+
+<h2 class="section-title">
+A Letter For You
+</h2>
+
+<p class="section-sub">
+From my heart to my mudhu🥰
+</p>
+
+
+<div class="letter-wrapper">
+
+<div class="letter">
+
+<div class="letter-content">
+
+My dearest <b>mudhu🥰</b>,
+
+<br><br>
+
+It's been one month since we started this little journey together.
+
+One month may sound like a small amount of time,
+but somehow you've already become such a beautiful part of my days.
+
+<br><br>
+
+I've loved the little conversations,
+the random smiles,
+the silly moments,
+and simply knowing that you're there.
+
+<br><br>
+
+And honestly...
+
+I don't want this to be just one month.
+
+<br><br>
+
+We've stayed together for this one month,
+so I want to ask you something from my heart...
+
+<br><br>
+
+<b>
+Will you be with me in 2 months?
+<br>
+In 6 months?
+<br>
+In 1 year?
+<br>
+And hopefully in all the beautiful months waiting for us?
+</b>
+
+<br><br>
+
+I don't know exactly what the future will look like,
+but I know I'd love to discover it with you.
+
+<br><br>
+
+Thank you for making this first month so special.
+
+Here's to our first month...
+
+and hopefully to many, many more. ❤️
+
+<div class="signature">
+
+Forever yours,<br>
+Your person ❤️
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= THREE PHOTOS ================= -->
+
+<section class="reveal">
+
+<h2 class="section-title">
+Three Little Memories
+</h2>
+
+<p class="section-sub">
+Three photos. A thousand feelings.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="photo-card">
+
+<div class="photo">
+
+<img
+src="photo1.jpg"
+alt="Our first memory">
+
+</div>
+
+<div class="caption">
+Our beginning ❤️
+</div>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<div class="photo">
+
+<img
+src="photo2.jpg"
+alt="A beautiful memory">
+
+</div>
+
+<div class="caption">
+My favourite smile 🥰
+</div>
+
+</div>
+
+
+
+<div class="photo-card">
+
+<div class="photo">
+
+<img
+src="photo3.jpg"
+alt="Our memory">
+
+</div>
+
+<div class="caption">
+Us. Always. 💕
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= ONE MONTH ================= -->
+
+<section class="reveal">
+
+<div class="counter">
+
+<div class="counter-number">
+01
+</div>
+
+<div class="counter-label">
+Beautiful month together
+</div>
+
+<p style="
+margin-top:25px;
+opacity:.7;
+">
+
+One month down...
+
+<br>
+
+and hopefully a lifetime of memories ahead. ❤️
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= THINGS ================= -->
+
+<section class="reveal">
+
+<h2 class="section-title">
+Why This Month Was Special
+</h2>
+
+<p class="section-sub">
+A few little things I want you to know.
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="card-icon">
+🥰
+</div>
+
+<h3>
+Your Smile
+</h3>
+
+<p>
+Somehow your smile manages to make even an ordinary moment feel special.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+💕
+</div>
+
+<h3>
+Our Moments
+</h3>
+
+<p>
+It's the small conversations, jokes and random moments that I'll remember.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-icon">
+✨
+</div>
+
+<h3>
+You
+</h3>
+
+<p>
+Simply having you in my life has made this month more beautiful.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= QUESTION ================= -->
+
+<section class="question reveal">
+
+<p class="eyebrow">
+One important question...
+</p>
+
+<h2>
+Will you stay?
+</h2>
+
+<p>
+
+Not just for another month.
+
+But for all the little months,
+memories and moments waiting ahead of us?
+
+</p>
+
+
+<button
+class="btn"
+onclick="showAnswer()">
+
+Tap for my answer ❤️
+
+</button>
+
+
+<div
+id="answer"
+class="answer">
+
+Yes, mudhu🥰
+
+<br>
+
+Let's make every month
+another little chapter of us. ❤️
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="final reveal">
+
+<div>
+
+<p class="eyebrow">
+One month down...
+</p>
+
+<h2>
+Many more<br>
+to go ❤️
+</h2>
+
+<p>
+
+Happy One Month to us, mudhu🥰
+
+<br><br>
+
+Thank you for being part of my life.
+
+</p>
+
+<button
+class="btn"
+onclick="celebrate()">
+
+Celebrate Us ✨
+
+</button>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Made with ❤️ for my mudhu🥰
+
+</footer>
+
+
+
+<script>
+
+/* ================= FLOATING HEARTS ================= */
+
+const heartContainer =
+document.getElementById("hearts");
+
+for(let i = 0; i < 20; i++){
+
+    const heart =
+    document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+    ["♥","♡","💕","✦","🌸"][i % 5];
+
+    heart.style.left =
+    Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+    (12 + Math.random() * 20) + "px";
+
+    heart.style.animationDelay =
+    Math.random() * 7 + "s";
+
+    heart.style.animationDuration =
+    (5 + Math.random() * 5) + "s";
+
+    heartContainer.appendChild(heart);
+}
+
+
+
+/* ================= SCROLL ================= */
+
+function scrollToLetter(){
+
+    document
+    .getElementById("letter")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* ================= REVEAL ================= */
+
+const observer =
+new IntersectionObserver(
+(entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target
+            .classList
+            .add("show");
+
+        }
+
+    });
+
+},
+{
+    threshold: .12
+});
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => {
+
+    observer.observe(element);
+
+});
+
+
+
+/* ================= QUESTION ================= */
+
+function showAnswer(){
+
+    const answer =
+    document.getElementById("answer");
+
+    answer.style.display = "block";
+
+    celebrate();
+
+}
+
+
+
+/* ================= CELEBRATION ================= */
+
+function celebrate(){
+
+    for(let i = 0; i < 35; i++){
+
+        const heart =
+        document.createElement("div");
+
+        heart.className =
+        "heart";
+
+        heart.innerHTML =
+        ["❤️","💕","💗","✨","🥰"][i % 5];
+
+        heart.style.left =
+        Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+        heart.style.animationDuration =
+        "3s";
+
+        heartContainer
+        .appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 3500);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
